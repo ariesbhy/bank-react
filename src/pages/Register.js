@@ -19,6 +19,8 @@ const Register = () => {
   });
 
   const handleFormSubmit = (e) => {
+    e.preventDefult();
+    console.log(userInfo);
     mutate();
   };
 
