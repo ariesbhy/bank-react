@@ -13,6 +13,7 @@ const register = async (userInfo) => {
     formData.append(userInfo[key]);
   }
   const { data } = await instance.post("/auth/register", formData);
+  setToken(data.token);
   return data;
 };
 
