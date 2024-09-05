@@ -27,7 +27,7 @@ const Register = () => {
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center absolute inset-0 z-[-1]">
       <div className="max-w-md w-full px-6 py-8 bg-gray-800 rounded-md shadow-md">
-        <h2 className="text-3xl text-white font-semibold mb-6">Register</h2>
+        <h1 className="text-3xl text-white font-semibold mb-6">Register</h1>
         <form onSubmit={handleFormSubmit}>
           <div className="mb-4">
             <label
@@ -47,15 +47,15 @@ const Register = () => {
           </div>
           <div className="mb-4">
             <label
-              htmlFor="userName"
+              htmlFor="Username"
               className="block text-white text-sm font-medium mb-2"
             >
-              userName
+              Username
             </label>
             <input
-              type="userName"
-              id="userName"
-              name="userName"
+              type="text"
+              id="Username"
+              name="Username"
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
@@ -82,7 +82,7 @@ const Register = () => {
               htmlFor="image"
               className="block text-white text-sm font-medium mb-2"
             >
-              Profile Image
+              Upload Profile Picture
             </label>
             <input
               type="file"

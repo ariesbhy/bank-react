@@ -1,15 +1,28 @@
-import logo from "./logo.svg";
+import { Outlet } from "react-router";
 import "./App.css";
-import Register from "./pages/Register";
-import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import { useEffect, useState } from "react";
+import { getToken } from "./API/storage";
+import User from "./pages/Users";
+import UserContext from "./context/UserContext";
 
 function App() {
-  const nameBank = <h1>International Bank</h1>;
+  const [first, setFirst] = useState(false);
 
+  useEffect(() => {
+    const token = getToken();
+    if (token) {
+      setUser(true);
+    }
+  });
   return (
-    <div>
-      <Home />
-    </div>
+    <UserContext.Provider value={(User, setUser)}>
+      <div className="App font-mono">
+        <h1 className="text-white">the user state is {`${User}`}</h1>
+        <Navbar />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 }
 
