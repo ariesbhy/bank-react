@@ -16,12 +16,17 @@ const createBank = async (bankProfile) => {
 };
 
 const updateBank = async (bankInfo) => {
-  const { data } = await instance.put(`/banks/${bankInfo._id}`, bankInfo);
+  const { data } = await instance.put(
+    `/banks/"/mini-project/api/auth/profile"`,
+    bankInfo
+  );
   return data;
 };
 
 const deleteBank = async (bankId) => {
-  const { data } = await instance.delete(`/banks/${bankId}`);
+  const { data } = await instance.delete(
+    `/banks/"/mini-project/api/auth/user/<userId>"`
+  );
   return data;
 };
 

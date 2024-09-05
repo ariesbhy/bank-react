@@ -27,23 +27,8 @@ const Register = () => {
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center absolute inset-0 z-[-1]">
       <div className="max-w-md w-full px-6 py-8 bg-gray-800 rounded-md shadow-md">
-        <h1 className="text-3xl text-white font-semibold mb-6">Register</h1>
-        <form onSubmit={handleFormSubmit}>
-          <div className="mb-4">
-            <label
-              htmlFor="name"
-              className="block text-white text-sm font-medium mb-2"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
+        <h2 className="text-3xl text-rgb(83, 187, 106) font-semibold mb-6">Register Your Account</h2>
+        <form onSubmit={handleFormSubmit}> 
           </div>
           <div className="mb-4">
             <label
@@ -97,7 +82,7 @@ const Register = () => {
             <button
               onClick={handleFormSubmit}
               type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+              className="px-4 py-2 bg-rgb(83, 187, 106) text-white rounded-md hover:bg-blue-600 transition-colors"
             >
               Register
             </button>

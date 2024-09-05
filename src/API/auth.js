@@ -35,5 +35,9 @@ const getAllUsers = async () => {
 const logout = () => {
   localStorage.removeItem("token");
 };
+const my = async () => {
+  const { data } = await instance.get("/mini-project/api/transactions/my");
+  return data;
+};
 
-export { login, register, me, getAllUsers };
+export { login, register, me, getAllUsers, my };
