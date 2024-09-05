@@ -29,7 +29,7 @@ const me = async () => {
 };
 
 const getAllUsers = async () => {
-  const { data } = await instance.get("/auth/users");
+  const { data } = await instance.get("/mini-project/api/auth/users");
   return data;
 };
 const logout = () => {
