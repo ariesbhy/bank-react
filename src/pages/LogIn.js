@@ -31,53 +31,63 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-gray-900 min-h-screen flex items-center justify-center absolute inset-0 z-[-1]">
-      <div className="max-w-md w-full px-6 py-8 bg-gray-800 rounded-md shadow-md">
-        <h2 className="text-3xl text-white font-semibold mb-6">Login</h2>
-        <h1 className="text-white">{`${user}`}</h1>
-        <form onSubmit={handleFormSubmit}>
-          <div className="mb-4">
-            <label
-              htmlFor="userName"
-              className="block text-white text-sm font-medium mb-2"
-            >
-              userName
-            </label>
-            <input
-              type="userName"
-              name="userName"
-              id="userName"
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              htmlFor="password"
-              className="block text-white text-sm font-medium mb-2"
-            >
-              Password
-            </label>
-            <input
-              name="password"
-              type="password"
-              id="password"
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
-          </div>
-          <div className="flex justify-center">
-            <button
-              onClick={handleFormSubmit}
-              type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
-            >
-              Login
-            </button>
-          </div>
-        </form>
+    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <img
+          alt="Bank logo"
+          src="https://www.pngitem.com/pimgs/m/153-1531279_bank-building-icon-generic-monochrome-free-bank-logo.png"
+          className="mx-auto h-10 w-auto"
+        />
+      </div>
+
+      <div className="bg-gray-900 min-h-screen flex items-center justify-center absolute inset-0 z-[-1]">
+        <div className="max-w-md w-full px-6 py-8 bg-gray-800 rounded-md shadow-md">
+          <h2 className="text-3xl text-white font-semibold mb-6">Login</h2>
+          <h1 className="text-white">{`${user}`}</h1>
+          <form onSubmit={handleFormSubmit}>
+            <div className="mb-4">
+              <label
+                htmlFor="userName"
+                className="block text-white text-sm font-medium mb-2"
+              >
+                userName
+              </label>
+              <input
+                type="userName"
+                name="userName"
+                id="userName"
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="password"
+                className="block text-white text-sm font-medium mb-2"
+              >
+                Password
+              </label>
+              <input
+                name="password"
+                type="password"
+                id="password"
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+            <div className="flex justify-center">
+              <button
+                onClick={handleFormSubmit}
+                type="submit"
+                className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

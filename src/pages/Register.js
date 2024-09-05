@@ -26,17 +26,17 @@ const Register = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center absolute inset-0 z-[-1]">
-      <div className="max-w-md w-full px-6 py-8 bg-gray-800 rounded-md shadow-md">
-        <h2 className="text-3xl text-rgb(83, 187, 106) font-semibold mb-6">Register Your Account</h2>
-        <form onSubmit={handleFormSubmit}> 
+    <div className="max-w-md w-full px-6 py-8 bg-gray-800 rounded-md shadow-md">
+    <h2 className="text-3xl text-rgb(83, 187, 106) font-semibold mb-6">Register Your Account</h2>
+    <form onSubmit={handleFormSubmit}> 
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="Username"
-              className="block text-black text-sm font-medium mb-2"
-            >
-              Username
-            </label>
+            <div className="mb-4">
+                <label 
+                  htmlFor="Username"
+                  className="block text-black text-sm font-medium mb-2"
+                >
+                  Username
+                </label>
             <input
               type="text"
               id="Username"
@@ -87,8 +87,8 @@ const Register = () => {
               Register
             </button>
           </div>
-        </form>
-      </div>
+    </form>
+    </div>
     </div>
   );
 };
