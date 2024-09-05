@@ -16,7 +16,7 @@ const createBank = async (bankProfile) => {
 };
 
 const updateBank = async (bankInfo) => {
-  const { data } = await instance.put(`/banks/${bankInfo._id}`, noteInfo);
+  const { data } = await instance.put(`/banks/${bankInfo._id}`, bankInfo);
   return data;
 };
 

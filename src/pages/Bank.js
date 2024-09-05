@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useParams } from "react-router-dom";
-import { getBank } from "../api/banks";
+import { getBank } from "../API/banks";
 
 const Bank = () => {
   const { bankId } = useParams();
@@ -12,7 +12,7 @@ const Bank = () => {
     error,
   } = useQuery({
     queryKey: ["bank", bankId],
-    queryFn: () => getNote(noteId),
+    queryFn: () => getBank(bankId),
   });
   if (!bank) return <div>Not found!</div>;
   const { title, user, topic, body } = bank;

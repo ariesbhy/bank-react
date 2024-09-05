@@ -2,7 +2,10 @@ import instance from ".";
 import { setToken } from "./storage";
 
 const login = async (userInfo) => {
-  const { data } = await instance.post("/auth/login", userInfo);
+  const { data } = await instance.post(
+    "/mini-project/api/auth/login",
+    userInfo
+  );
   setToken(data.token);
   return data;
 };
@@ -12,13 +15,16 @@ const register = async (userInfo) => {
   for (const key in userInfo) {
     formData.append(userInfo[key]);
   }
-  const { data } = await instance.post("/auth/register", formData);
+  const { data } = await instance.post(
+    "/mini-project/api/auth/register",
+    formData
+  );
   setToken(data.token);
   return data;
 };
 
 const me = async () => {
-  const { data } = await instance.get("/auth/me");
+  const { data } = await instance.get("/mini-project/api/auth/me");
   return data;
 };
 

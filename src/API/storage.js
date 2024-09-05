@@ -10,4 +10,13 @@ const getToken = () => {
 const deleteToken = () => {
   localStorage.removeItem("token");
 };
-export { setToken, getToken, deleteToken };
+
+const checkToken = () => {
+  const token = getToken();
+  if (token) {
+    return true;
+  } else {
+    return false;
+  }
+};
+export { setToken, getToken, deleteToken, checkToken };

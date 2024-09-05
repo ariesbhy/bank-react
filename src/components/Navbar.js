@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import UserContext from "../context/UserContext";
+import { deleteToken } from "../API/storage";
 
-const [user, setUser] = useContext(UserContext);
 {
   user ? <> /*components*/ </> : <> /*components*/ </>;
 }
@@ -41,7 +41,13 @@ const Navbar = () => {
               </NavLink>
 
               {user ? (
-                <button className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <button
+                  onClick={() => {
+                    deleteToken();
+                    setUser(false);
+                  }}
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
                   Logout
                 </button>
               ) : (

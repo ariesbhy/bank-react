@@ -7,7 +7,7 @@ import User from "./pages/Users";
 import UserContext from "./context/UserContext";
 
 function App() {
-  const [first, setFirst] = useState(false);
+  const [user, setUser] = useState(false);
 
   useEffect(() => {
     const token = getToken();
