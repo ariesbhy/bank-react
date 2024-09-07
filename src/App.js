@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { getToken } from "./API/storage";
 import User from "./pages/Users";
 import UserContext from "./context/UserContext";
+import Register from "./pages/Register";
 
 function App() {
   const [user, setUser] = useState(false);
@@ -21,6 +22,7 @@ function App() {
         <h1 className="text-white">the user state is {`${User}`}</h1>
         <Navbar />
         <Outlet />
+        <Register />
       </div>
     </UserContext.Provider>
   );
