@@ -23,11 +23,4 @@ const updateBank = async (bankInfo) => {
   return data;
 };
 
-const deleteBank = async (bankId) => {
-  const { data } = await instance.delete(
-    `/banks/"/mini-project/api/auth/user/<userId>"`
-  );
-  return data;
-};
-
-export { getAllBanks, getBank, createBank, updateBank, deleteBank };
+export { getAllBanks, getBank, createBank, updateBank };

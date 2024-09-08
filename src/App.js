@@ -21,6 +21,7 @@ function App() {
         <h1 className="text-white">the user state is {`${user}`}</h1>
         <Navbar />
         <Outlet />
+        <Register />
       </div>
     </UserContext.Provider>
   );

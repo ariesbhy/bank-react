@@ -3,9 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import { deleteToken } from "../API/storage";
 
-{
-  user ? <> /*components*/ </> : <> /*components*/ </>;
-}
 const Navbar = () => {
   const [user, setUser] = useContext(UserContext);
   return (

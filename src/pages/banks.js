@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import BankItem from "../components/BankItem";
 import { getAllBanks } from "../API/banks";
 import { useQuery } from "@tanstack/react-query";
-import AddBank from "../components/AddBank";
 
 const Banks = () => {
   const {

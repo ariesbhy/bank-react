@@ -1,5 +1,6 @@
 import React from "react";
 import { getAllUsers } from "../API/auth";
+import { useQuery } from "@tanstack/react-query";
 
 const UserList = () => {
   const displayUsers = users.map((user) => {
