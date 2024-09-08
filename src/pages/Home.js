@@ -2,7 +2,6 @@ import React from "react";
 import Register from "./Register";
 
 const Home = () => {
-  const nameBank = "International Bank";
   return (
     <div className="bg-white-900 text-rgb(83, 187, 106) min-h-screen flex items-center justify-center">
       <div className="max-w-3xl text-center">

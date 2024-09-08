@@ -23,12 +23,6 @@ const User = () => {
                 alt="User"
                 className="w-24 h-24 rounded-full mb-4"
               />
-              <div className="text-center">
-                <h3 className="text-lg text-white font-semibold mb-2">
-                  {user.name}
-                </h3>
-                <p className="text-gray-300">{user.email}</p>
-              </div>
             </div>
           ))}
         </div>

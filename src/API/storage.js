@@ -8,12 +8,12 @@ const getToken = () => {
 };
 
 const deleteToken = () => {
-  localStorage.removeItem("token");
+  localStorage.removeItem("token"); //for logout
 };
 
 const checkToken = () => {
   const token = getToken();
-  if (token) {
+  if (getToken) {
     return true;
   } else {
     return false;

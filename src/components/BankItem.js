@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BankItem = ({ user, title, topic, _id }) => {
+const BankItem = ({ user, balance, _id }) => {
   return (
     <div className="bg-gray-800 rounded-md shadow-md p-4 mb-4 text-white min-w-[300px]">
       <div className="flex items-center justify-between mb-2">
@@ -9,16 +9,16 @@ const BankItem = ({ user, title, topic, _id }) => {
       </div>
       <p className="text-gray-400 mb-2">Created by: {user?.name}</p>
       <div className="flex flex-wrap">
-        {topic?.map((topic) => (
+        {balance?.map((balance) => (
           <span
-            key={topic}
+            key={balance}
             className="inline-block bg-gray-600 text-gray-200 text-sm px-2 py-1 rounded-md mr-2 mb-2"
           >
-            {topic}
+            {balance}
           </span>
         ))}
       </div>
-      <Link to={`/notes/${_id}`}>
+      <Link to={`/users/${_id}`}>
         <button className="px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
           View Details
         </button>

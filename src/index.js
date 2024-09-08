@@ -8,7 +8,9 @@ import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/LogIn";
 import Register from "./pages/Register";
-import User from "./pages/Users";
+import Users from "./pages/Users";
+import Transaction from "";
+
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -22,11 +24,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/banks",
-        element: <banks />,
+        element: <Transaction />,
       },
       {
         path: "/banks/:bankId",
-        element: <banks />,
+        element: <Users />,
       },
       {
         path: "/login",
@@ -38,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/users",
-        element: <User />,
+        element: <Logout />,
       },
     ],
   },

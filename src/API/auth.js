@@ -11,7 +11,7 @@ const login = async (userInfo) => {
 };
 
 const register = async (userInfo) => {
-  const formData = new formData();
+  const formData = new formData(); // for upload photo folder
   for (const key in userInfo) {
     formData.append(userInfo[key]);
   }
@@ -23,7 +23,7 @@ const register = async (userInfo) => {
   return data;
 };
 
-const me = async () => {
+const myProfile = async () => {
   const { data } = await instance.get("/mini-project/api/auth/me");
   return data;
 };
@@ -35,9 +35,9 @@ const getAllUsers = async () => {
 const logout = () => {
   localStorage.removeItem("token");
 };
-const my = async () => {
+const myTransactions = async () => {
   const { data } = await instance.get("/mini-project/api/transactions/my");
   return data;
 };
 
-export { login, register, me, getAllUsers, my };
+export { login, register, myProfile, getAllUsers, myTransactions };
