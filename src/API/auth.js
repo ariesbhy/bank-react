@@ -28,16 +28,43 @@ const myProfile = async () => {
   return data;
 };
 
+const logout = () => {
+  localStorage.removeItem("token");
+};
 const getAllUsers = async () => {
   const { data } = await instance.get("/mini-project/api/auth/users");
   return data;
 };
-const logout = () => {
-  localStorage.removeItem("token");
-};
+
 const myTransactions = async () => {
   const { data } = await instance.get("/mini-project/api/transactions/my");
   return data;
 };
+const myDeposit = async () => {
+  const { data } = await instance.put("/mini-project/api/transactions/deposit");
+  return data;
+};
 
-export { login, register, myProfile, getAllUsers, myTransactions };
+const myWithdraw = async () => {
+  const { data } = await instance.put(
+    "/mini-project/api/transactions/withdraw"
+  );
+  return data;
+};
+const transferToaccount = async () => {
+  const { data } = await instance.put(
+    "/mini-project/api/transactions/transfer/<username> "
+  );
+  return data;
+};
+
+export {
+  login,
+  register,
+  myProfile,
+  myTransactions,
+  myDeposit,
+  myWithdraw,
+  transferToaccount,
+  getAllUsers,
+};

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { register } from "../API/auth";
 import { useMutation } from "@tanstack/react-query";
+import { NavLink } from "react-router-dom";
 
 const Register = () => {
+  const [username, setUsername] = useState();
+  const [password, setPassword] = React.useState();
+  const [image, setImage] = React.useState();
   const [userInfo, setUserInfo] = useState({});
 
   const handleChange = (e) => {
@@ -13,7 +17,7 @@ const Register = () => {
     }
   };
 
-  const { mutate } = useMutation({
+  const { mutate: handleRegister } = useMutation({
     mutationKey: ["register"],
     mutationFn: () => register(userInfo),
   });
@@ -21,79 +25,60 @@ const Register = () => {
   const handleFormSubmit = (e) => {
     e.preventDefult();
     console.log(userInfo);
-    mutate();
+    handleRegister();
   };
 
   return (
-    <div className="bg-gray-900 min-h-screen flex items-center justify-center absolute inset-0 z-[-1]">
-      <div className="max-w-md w-full px-6 py-8 bg-gray-800 rounded-md shadow-md">
-        <h2 className="text-3xl text-rgb(83, 187, 106) font-semibold mb-6">
-          Register Your Account
-        </h2>
-        <form onSubmit={handleFormSubmit}>
-          <div>
-            <div className="mb-4">
-              <label
-                htmlFor="Username"
-                className="block text-black text-sm font-medium mb-2"
-              >
-                Username
-              </label>
+    <div className="flex justify-center items-center h-screen bg-white">
+      <div className="flex flex-col md:flex-row items-center">
+        <img
+          alt="bank logo"
+          className="w-1/2 md:w-1/3"
+          height="400"
+          src="https://www.pngitem.com/pimgs/m/153-1531279_bank-building-icon-generic-monochrome-free-bank-logo.png"
+          width="400"
+        />
+        <div className="w-full md:w-1/3 p-8">
+          <h2 className="text-2xl font-bold text-navyblue mb-4">
+            Register your account
+          </h2>
+          <p className="mb-4">
+            If you do have an account,
+            <NavLink className="text-blue-500" to="/login">
+              login here
+            </NavLink>
+          </p>
+          <form onSubmit={handleFormSubmit}>
+            <h2>Username</h2>
+            <input
+              onChange={handleChange}
+              className="w-full p-2 mb-4 border border-gray-300 rounded"
+              placeholder="Username"
+              type="text"
+            />
 
+            <h2>Password</h2>
+            <input
+              onChange={handleChange}
+              className="w-full p-2 mb-4 border border-gray-300 rounded"
+              placeholder="Password"
+              type="password"
+            />
+            <div className="mb-4">
+              <label classN="block mb-2">Upload a Profile Picture</label>
               <input
-                type="text"
-                id="Username"
-                name="Username"
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
+                className="w-full p-2 border border-gray-300 rounded"
+                type="file"
               />
             </div>
-            <div>
-              <div className="mb-4">
-                <label
-                  htmlFor="password"
-                  className="block text-black text-sm font-medium mb-2"
-                >
-                  Password
-                </label>
-                <label
-                  type="password"
-                  id="password"
-                  name="password"
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </div>
-              <div className="mb-6">
-                <label
-                  htmlFor="image"
-                  className="block text-black text-sm font-medium mb-2"
-                >
-                  Upload Profile Picture
-                </label>
-                <input
-                  type="file"
-                  id="image"
-                  name="image"
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
-                  required
-                />
-              </div>
-              <div className="flex justify-center">
-                <button
-                  onClick={handleFormSubmit}
-                  type="submit"
-                  className="px-4 py-2 bg-rgb(83, 187, 106) text-white rounded-md hover:bg-blue-600 transition-colors"
-                >
-                  Register
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
+            <button
+              type="submit"
+              className="w-full bg-green-600 text-white p-2 rounded"
+            >
+              Register
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

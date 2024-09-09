@@ -1,21 +1,23 @@
 import React from "react";
 import Register from "./Register";
 
-const Home = () => {
+function Home() {
   return (
-    <div className="bg-white-900 text-rgb(83, 187, 106) min-h-screen flex items-center justify-center">
-      <div className="max-w-3xl text-center">
-        <h1 className="text-6xl font-bold mb-8">International Bank</h1>
-
-        <img
-          className=""
-          src="https://www.pngitem.com/pimgs/m/153-1531279_bank-building-icon-generic-monochrome-free-bank-logo.png"
-          alt="bank-logo"
-        />
+    <header className="masthead bg-primary text-green text-center">
+      <div className="container d-flex align-items-center flex-column">
+        <h1 className="masthead-heading text-uppercase mb-0">
+          International Bank
+        </h1>
+        <div className="divider-custom divider-light">
+          <div className="divider-custom-line"></div>
+          <div className="divider-custom-icon">
+            <i className="fas fa-star"></i>
+          </div>
+          <div className="divider-custom-line"></div>
+        </div>
       </div>
-      <Register />
-    </div>
+    </header>
   );
-};
+}
 
 export default Home;

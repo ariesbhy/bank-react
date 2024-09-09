@@ -1,74 +1,56 @@
-import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import UserContext from "../context/UserContext";
-import { deleteToken } from "../API/storage";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
-  const [user, setUser] = useContext(UserContext);
+function Nav() {
   return (
-    <nav className="bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/">
-              <span className="font-semibold text-xl text-white">
-                Our Banks
-              </span>
-            </Link>
-          </div>
-          <div className="block">
-            <div className="ml-10 flex items-baseline space-x-4">
+    <nav
+      className="navbar navbar-expand-lg bg-secondary text-uppercase "
+      id="mainNav"
+    >
+      <div className="container">
+        <NavLink to={"/"} className="navbar-brand">
+          Register
+        </NavLink>
+
+        <div className="collapse navbar-collapse" id="navbarResponsive">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item mx-0 mx-lg-1">
               <NavLink
-                to="/"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                to={"/Profile"}
+                className="nav-link py-3 px-0 px-lg-3 rounded"
               >
                 Home
               </NavLink>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1">
               <NavLink
-                to="/banks"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                to={"/Profile"}
+                className="nav-link py-3 px-0 px-lg-3 rounded"
               >
-                Banks
+                Transaction
               </NavLink>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1">
               <NavLink
-                to="/Users"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                to={"/Users"}
+                className="nav-link py-3 px-0 px-lg-3 rounded"
               >
                 Users
               </NavLink>
-
-              {user ? (
-                <button
-                  onClick={() => {
-                    deleteToken();
-                    setUser(false);
-                  }}
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Logout
-                </button>
-              ) : (
-                <>
-                  <NavLink
-                    to="/login"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Login
-                  </NavLink>
-                  <NavLink
-                    to="/register"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Register
-                  </NavLink>
-                </>
-              )}
-            </div>
-          </div>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1">
+              <NavLink
+                to={"/Profile"}
+                className="nav-link py-3 px-0 px-lg-3 rounded"
+              >
+                Profile
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
   );
-};
+}
 
-export default Navbar;
+export default Nav;
